@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.widget.ToggleButton
 import com.example.kinderdorf.R
 import com.google.android.material.button.MaterialButtonToggleGroup
 
 
 class CalendarFragment : Fragment() {
-
+    lateinit var toggleGroup: MaterialButtonToggleGroup
 // tells the fragment which layout to use
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,14 +21,16 @@ class CalendarFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_calendar, container, false)
 
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // set onClickListeners and handle logic
+        toggleGroup = view.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup);
 
-        MaterialButtonToggleGroup.OnButtonCheckedListener { group, checkedId, isChecked ->
+        toggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (isChecked){
                 when (checkedId) {
                     R.id.allEventsButton -> showToast("All Events Clicked")
