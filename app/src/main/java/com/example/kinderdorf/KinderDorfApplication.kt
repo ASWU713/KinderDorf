@@ -11,6 +11,7 @@ class KinderDorfApplication : Application() {
 
         ParseObject.registerSubclass(User::class.java)
         ParseObject.registerSubclass(Transactions::class.java)
+        ParseObject.registerSubclass(Message::class.java)
 
         Parse.initialize(
             Parse.Configuration.Builder(this)
