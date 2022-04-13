@@ -10,7 +10,9 @@
         <entry key="..\:/Users/SWU/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/fragment_profile.xml" value="0.5598958333333334" />
         <entry key="..\:/Users/SWU/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.5598958333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1276595744680851" />
-        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/transaction_post.xml" value="0.25" />
       </map>
     </option>
   </component>
