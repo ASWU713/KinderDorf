@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 //*** This class is the adapter for the CalendarFragment.kt that will bind transactions to its view
 
@@ -43,10 +42,10 @@ class PersCalendAdapter(val context: Context, val transactions: List<Transaction
             buyerData = itemView.findViewById(R.id.buyerData)
         }
         fun bind(transactions: Transactions){
-            requestDateData.text = Transactions.KEY_DATE_REQUEST
-            priceData.text = Transactions.KEY_PRICE
-            sellerData.text = Transactions.KEY_USER_SELLER
-            buyerData.text = Transactions.KEY_USER_BUYER
+            requestDateData.text = transactions.getDateRequest().toString()
+            priceData.text = transactions.getPrice().toString()
+            sellerData.text = transactions.getUserSeller().toString()
+            buyerData.text = transactions.getUserBuyer().toString()
 
         }
     }
