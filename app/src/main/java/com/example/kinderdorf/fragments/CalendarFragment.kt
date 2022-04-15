@@ -1,6 +1,5 @@
 package com.example.kinderdorf.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kinderdorf.PersCalendAdapter
@@ -27,6 +27,7 @@ class CalendarFragment : Fragment() {
     var allTransactions: MutableList<Transactions> = mutableListOf()
 
     lateinit var adapter: PersCalendAdapter
+
 
 // tells the fragment which layout to use
     override fun onCreateView(
@@ -56,18 +57,19 @@ class CalendarFragment : Fragment() {
 
             }
         }
-        newEventButton.setOnClickListener(View.OnClickListener(){
-            Toast.makeText(requireContext(), "This is the new event button", Toast.LENGTH_SHORT).show()
-//            val intent = Intent(requireContext(), EventDetailsFragment::class.java)
-//            startActivity(intent)
+        newEventButton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val nextFrag = EventDetailsFragment()
+                activity!!.supportFragmentManager.beginTransaction()
+                    .replace(R.id.flContainer, nextFrag, "findThisFragment")
+                    .addToBackStack(null)
+                    .commit()
+            }
         })
-//        addCardButton.setOnClickListener(View.OnClickListener {
-//            val intent = Intent(this@MainActivity, AddCardActivity::class.java)
-//            intent.putExtra("question", flashcardQuestion.getText())
-//            intent.putExtra("answer", flashcardAnswer.getText())
-//            this@MainActivity.startActivityForResult(intent, 100)
-//            overridePendingTransition(R.anim.right_in, R.anim.left_out)
-//        })
+
+
+        //           Toast.makeText(requireContext(), "This is the new event button", Toast.LENGTH_SHORT).show()
+//
         // steps for populating the Recyclerview
         //1. Create a layout for each row in the list (booked and open appointments)
         //2. Create a data source for each row (The Transaction Class)
@@ -84,6 +86,8 @@ class CalendarFragment : Fragment() {
     private fun showToast(str:String) {
         Toast.makeText(requireContext(), str, Toast.LENGTH_SHORT).show()
     }
+
+
 
      open fun queryTransactions(){
         // specify which class to query
