@@ -12,7 +12,8 @@ import com.example.kinderdorf.Message
 import com.example.kinderdorf.R
 import com.example.kinderdorf.adapters.MessageAdapter.*
 
-class MessageAdapter(val context: Context, val messages: ArrayList<Message>) :RecyclerView.Adapter<ViewHolder>(){
+class MessageAdapter(val context: Context, val messages: ArrayList<Message>)
+    :RecyclerView.Adapter<ViewHolder>(){
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val tvMessage: TextView
