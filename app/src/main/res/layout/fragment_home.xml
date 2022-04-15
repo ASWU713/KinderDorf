@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello from Home Fragment" />
+        android:id="@+id/tvCreditBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Credits: 14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ToggleButton
+        android:id="@+id/tbScheduled"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:checked="true"
+        android:text="ToggleButton"
+        android:textOff="Scheduled"
+        android:textOn="Scheduled"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreditBalance" />
+
+    <ToggleButton
+        android:id="@+id/tbOpenRequests"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checked="false"
+        android:text="Open Requests"
+        android:textOff="Open Requests"
+        android:textOn="Open Requests"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tbScheduled"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreditBalance" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGroupCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbScheduled" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
