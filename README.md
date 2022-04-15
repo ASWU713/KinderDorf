@@ -318,6 +318,7 @@ Optional:
      ```
          
 - Updates: 
-  - Home Screen: <img width="127" alt="image" src="https://user-images.githubusercontent.com/33812146/163652810-2b0cd603-46ec-43d7-8beb-9fc9e73a7713.png">
-  - Message Screen: <img width="124" alt="image" src="https://user-images.githubusercontent.com/33812146/163652837-70e3484b-1098-4127-8b85-5aa28e509a69.png">
+  - Home Screen: <img width="256" alt="image" src="https://user-images.githubusercontent.com/33812146/163652810-2b0cd603-46ec-43d7-8beb-9fc9e73a7713.png">
+  - Message Screen: <img width="256" alt="image" src="https://user-images.githubusercontent.com/33812146/163652837-70e3484b-1098-4127-8b85-5aa28e509a69.png">
+  - Gif: <img src="https://media.giphy.com/media/xuQb7FaunUofCINmIE/giphy.gif" width=750>
 
