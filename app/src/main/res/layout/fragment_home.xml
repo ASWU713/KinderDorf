@@ -11,50 +11,52 @@
         android:id="@+id/tvCreditBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Credits: 14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/tbScheduled"
-        android:layout_width="84dp"
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/homeToggleButtonGroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/teal_200"
-        android:checked="true"
-        android:text="ToggleButton"
-        android:textOff="Scheduled"
-        android:textOn="Scheduled"
-        android:textSize="10dp"
+        android:layout_marginTop="15dp"
+        app:checkedButton="@+id/scheduledButton"
+        app:selectionRequired="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias=".38"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCreditBalance" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCreditBalance"
+        app:singleSelection="true">
 
-    <ToggleButton
-        android:id="@+id/tbOpenRequests"
-        android:layout_width="84dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:checked="false"
-        android:text="Open Requests"
-        android:textOff="Open Requests"
-        android:textOn="Open Requests"
-        android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/tbScheduled"
-        app:layout_constraintTop_toBottomOf="@+id/tvCreditBalance" />
+        <Button
+            android:id="@+id/scheduledButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="Scheduled"
+             />
+
+
+        <Button
+            android:id="@+id/openButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="Open"
+     />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGroupCalendar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_height="300dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/rv_container_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbScheduled" />
+        app:layout_constraintTop_toBottomOf="@+id/homeToggleButtonGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

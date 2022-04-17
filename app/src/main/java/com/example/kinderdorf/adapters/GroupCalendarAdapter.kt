@@ -42,15 +42,22 @@ class GroupCalendarAdapter(val context: Context, val transactions: ArrayList<Tra
             }
 
             fun bind(transaction: Transactions) {
-                tvUserSeller.text = transaction.getUserSeller()?.username
-                tvRequestDate.text = transaction.getDateRequest().toString()
-                tvPrice.text = transaction.getPrice().toString()
-                tvBuyer.text = transaction.getUserBuyer()?.username
+
+                var list: List<String> = transaction.getDateRequest().toString().split(" ")
+                tvUserSeller.text = "Request By: " + transaction.getUserSeller()?.get("firstName").toString() + " " + transaction.getUserSeller()?.get("lastName").toString()
+                tvRequestDate.text = list[1] + " " + list[2]
+                tvPrice.text = "Credits: " + transaction.getPrice()?.toInt().toString()
+                tvBuyer.text = "Accepted By: " + transaction.getUserBuyer()?.get("firstName").toString() + " " + transaction.getUserBuyer()?.get("lastName").toString()
             }
         }
 
         fun addAll(transactionList: List<Transactions>) {
             transactions.addAll(transactionList)
+            notifyDataSetChanged()
+        }
+
+        fun clear(transactionList: List<Transactions>) {
+            transactions.clear()
             notifyDataSetChanged()
         }
 
