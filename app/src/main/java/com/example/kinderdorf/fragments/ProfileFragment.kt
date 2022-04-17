@@ -5,12 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kinderdorf.R
 import com.example.kinderdorf.Transactions
+import com.example.kinderdorf.adapters.ProfileAdapter
 import com.parse.ParseQuery
 
 
 class ProfileFragment : Fragment() {
+
+    lateinit var transactionRecyclerView: RecyclerView
+    var allTransactions: MutableList<Transactions> = mutableListOf()
+    lateinit var adapter: ProfileAdapter
 
 
     override fun onCreateView(
@@ -24,6 +30,9 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+
         queryTransactions()
     }
 
@@ -31,6 +40,12 @@ class ProfileFragment : Fragment() {
         val query: ParseQuery<Transactions> = ParseQuery.getQuery(Transactions::class.java)
 
 
+
+
+    }
+    companion object{
+        const val TAG = "ProfileFragment"
+        const val POST_LIMIT = 20
     }
 
 
