@@ -49,8 +49,10 @@ class Transactions: ParseObject() {
     }
 
     companion object{
-        const val KEY_USER_BUYER = "userBuyer"
-        const val KEY_USER_SELLER = "userSeller"
+//        const val KEY_USER_BUYER = "userBuyer"
+//        const val KEY_USER_SELLER = "userSeller"
+        const val KEY_USER_BUYER = "buyerUser"
+        const val KEY_USER_SELLER = "sellerUser"
         const val KEY_DATE_BUY = "dateBuy"
         const val KEY_DATE_REQUEST = "dateRequest"
         const val KEY_PRICE = "price"

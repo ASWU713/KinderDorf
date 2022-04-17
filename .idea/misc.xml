@@ -4,10 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.194" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable/circle_background.xml" value="0.2195" />
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.194" />
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.194" />
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable/ic_launcher_background.xml" value="0.194" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable/rounded_corners_events.xml" value="0.326" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/drawable/rv_container_border.xml" value="0.203" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/activity_register.xml" value="0.1859375" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/fragment_calendar.xml" value="0.1859375" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/fragment_message.xml" value="0.2140625" />
+        <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/item_group_calendar.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/item_message_incoming.xml" value="0.1859375" />
         <entry key="..\:/Users/Nervster/AndroidStudioProjects/Kinder-Dorf/app/src/main/res/layout/item_message_outgoing.xml" value="0.1859375" />
       </map>
