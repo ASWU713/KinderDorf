@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kinderdorf.Message
 import com.example.kinderdorf.R
 import com.example.kinderdorf.User
+import com.example.kinderdorf.adapters.ChatAdapter
 import com.example.kinderdorf.adapters.MessageAdapter
 import com.parse.*
 import java.util.*
@@ -25,7 +26,8 @@ class MessageFragment : Fragment() {
     lateinit var ibSend: ImageButton
 
     lateinit var messagesRV: RecyclerView
-    lateinit var adapter: MessageAdapter
+//    lateinit var adapter: MessageAdapter
+    lateinit var adapter: ChatAdapter
     var allMessages: ArrayList<Message> = ArrayList()
 
     override fun onCreateView(
@@ -40,12 +42,18 @@ class MessageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         messagesRV = view.findViewById(R.id.rvMessages)
-        adapter = MessageAdapter(requireContext(), allMessages)
+//        adapter = MessageAdapter(requireContext(), allMessages)
+        adapter = ChatAdapter(requireContext(), ParseUser.getCurrentUser().objectId, allMessages)
         messagesRV.adapter = adapter
-        messagesRV.layoutManager = LinearLayoutManager(requireContext())
+        var linearLayout: LinearLayoutManager = LinearLayoutManager(requireContext())
+        linearLayout.setReverseLayout(true)
+        messagesRV.layoutManager = linearLayout
+
+
 
         queryMessages()
-        startWithCurrentUser()
+//        startWithCurrentUser()
+        setupMessagePosting()
     }
 
     private fun queryMessages( ) {
@@ -65,9 +73,12 @@ class MessageFragment : Fragment() {
                         for (message in messages) {
                             Log.i(TAG, "Message: " + message.getMessageText() + " , username: " + message.getUser()?.username)
                         }
-
+                        allMessages.clear()
                         allMessages.addAll(messages)
                         adapter.notifyDataSetChanged()
+
+                        messagesRV.scrollToPosition(0);
+
                     }
 
                 }
@@ -101,6 +112,7 @@ class MessageFragment : Fragment() {
                                 activity, "Successfully created message on Parse",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            queryMessages()
                         } else {
                             Log.e(TAG, "Failed to save message", e)
                         }
@@ -110,6 +122,8 @@ class MessageFragment : Fragment() {
             }
         })
     }
+
+
 
 
     companion object {

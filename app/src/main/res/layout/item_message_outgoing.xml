@@ -3,32 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/outgoing_message"
+    android:layout_marginStart="65dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="5dp"
+    android:padding="3dp"
+    >
 
     <TextView
         android:id="@+id/tvMessageOut"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:layout_marginEnd="32dp"
+        android:gravity="end"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/ivUserOut"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsernameOut" />
-
-    <ImageView
-        android:id="@+id/ivUserOut"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvUsernameOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvUsernameOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="10dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/ivUserOut"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
