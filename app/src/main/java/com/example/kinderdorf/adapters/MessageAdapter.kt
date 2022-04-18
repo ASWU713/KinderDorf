@@ -18,18 +18,18 @@ class MessageAdapter(val context: Context, val messages: ArrayList<Message>)
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val tvMessage: TextView
         val tvUsername: TextView
-        val ivProfileImage: ImageView
+//        val ivProfileImage: ImageView
 
         init {
             tvMessage = itemView.findViewById(R.id.tvMessageIn)
             tvUsername = itemView.findViewById(R.id.tvUsernameIn)
-            ivProfileImage = itemView.findViewById(R.id.ivUserIn)
+//            ivProfileImage = itemView.findViewById(R.id.ivUserIn)
         }
 
         fun bind(message: Message) {
             tvMessage.text = message.getMessageText()
             tvUsername.text = message.getUser()?.username
-            Glide.with(itemView.context).load(R.drawable.noprofileimage).into(ivProfileImage)
+//            Glide.with(itemView.context).load(R.drawable.noprofileimage).into(ivProfileImage)
         }
     }
 
