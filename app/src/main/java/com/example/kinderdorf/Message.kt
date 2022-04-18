@@ -15,6 +15,10 @@ class Message:ParseObject() {
         return getParseUser(KEY_USER)
     }
 
+    fun getUserId(): String? {
+        return getParseUser(KEY_USER)?.objectId
+    }
+
     fun setUser(parseUser: ParseUser) {
         put(KEY_USER, parseUser)
     }
