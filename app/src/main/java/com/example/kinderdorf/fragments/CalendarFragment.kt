@@ -61,7 +61,7 @@ class CalendarFragment : Fragment() {
             override fun onClick(v: View?) {
                 val nextFrag = EventDetailsFragment()
                 activity!!.supportFragmentManager.beginTransaction()
-                    .replace(R.id.flContainer, nextFrag, "findThisFragment")
+                    .replace(R.id.flContainer, nextFrag, "findEventFragment")
                     .addToBackStack(null)
                     .commit()
             }
@@ -94,21 +94,26 @@ class CalendarFragment : Fragment() {
         val query: ParseQuery<Transactions> = ParseQuery.getQuery(Transactions::class.java)
         // find all the Transaction objects in our server
         query.include(Transactions.KEY_USER_SELLER)
+         query.include(Transactions.KEY_USER_BUYER)
         // return the transactions in descending order
         query.addDescendingOrder("dateRequest")
         query.setLimit(20)
+
         query.findInBackground(object : FindCallback<Transactions> {
             override fun done(transactions: MutableList<Transactions>?, e:ParseException?) {
                 if (e != null) {
                     // something went wrong
                     Log.e(TAG, "Error fetching transactions")
+
                 } else {
+                    Log.i(TAG, "current transaction object:"+ transactions?.size)
                     if (transactions != null){
                         for (transaction in transactions) {
                             Log.i(
                                 TAG, "Transaction:" + transaction.getDateRequest()+", seller: "+
                                         transaction.getUserSeller()?.username)
                         }
+
                         allTransactions.addAll(transactions)
                         adapter.notifyDataSetChanged()
                     }

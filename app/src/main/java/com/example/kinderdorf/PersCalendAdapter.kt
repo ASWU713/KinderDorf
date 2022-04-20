@@ -1,15 +1,19 @@
 package com.example.kinderdorf
 
 import android.content.Context
+import android.icu.text.MessageFormat.format
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.lang.String.format
+import java.text.SimpleDateFormat
 
 //*** This class is the adapter for the CalendarFragment.kt that will bind transactions to its view
 
-class PersCalendAdapter(val context: Context, val transactions: List<Transactions>)
+class PersCalendAdapter(val context: Context, val transactions: MutableList<Transactions>)
     : RecyclerView.Adapter<PersCalendAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): PersCalendAdapter.ViewHolder {
@@ -26,14 +30,19 @@ class PersCalendAdapter(val context: Context, val transactions: List<Transaction
 
     override fun getItemCount(): Int {
         // returns the total amount of transactions
+        Log.i(TAG, "the current transactions:"+ transactions.size.toString())
         return transactions.size
     }
+
+
+
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         // initialize id's of textViews in transaction_post.xml
         val requestDateData: TextView
         val priceData: TextView
         val sellerData: TextView
         val buyerData: TextView
+        val simpleDateFormat = SimpleDateFormat("MMM-dd-yyyy")
 
         init {
             requestDateData = itemView.findViewById(R.id.requestDateData)
@@ -42,11 +51,15 @@ class PersCalendAdapter(val context: Context, val transactions: List<Transaction
             buyerData = itemView.findViewById(R.id.buyerData)
         }
         fun bind(transactions: Transactions){
-            requestDateData.text = transactions.getDateRequest().toString()
+            requestDateData.text = simpleDateFormat.format(transactions.getDateRequest()).toString()
             priceData.text = transactions.getPrice().toString()
-            sellerData.text = transactions.getUserSeller().toString()
-            buyerData.text = transactions.getUserBuyer().toString()
+            sellerData.text = transactions.getUserSeller()?.username
+            buyerData.text = transactions.getUserBuyer()?.username
 
         }
+    }
+
+    companion object {
+        const val TAG="PersCalendAdapter"
     }
 }
