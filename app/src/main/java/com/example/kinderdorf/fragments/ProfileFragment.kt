@@ -25,8 +25,7 @@ class ProfileFragment : Fragment() {
     var allTransactions: MutableList<Transactions> = mutableListOf()
     lateinit var creditAdapter: CreditsAdapter
     lateinit var creditHistory: RecyclerView
-    lateinit var tvFirstName: TextView
-    lateinit var tvLasttName: TextView
+    lateinit var tvName: TextView
     lateinit var tvUserName: TextView
     lateinit var tvCredits: TextView
     lateinit var tvTimeSpent: TextView
@@ -44,14 +43,15 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         creditHistory = view.findViewById(R.id.tvTransHistory)
-        tvFirstName = view.findViewById(R.id.tvFirstName)
-        tvLasttName = view.findViewById(R.id.tvLastName)
+        tvName = view.findViewById(R.id.tvName)
         tvUserName = view.findViewById(R.id.UserName)
         tvCredits = view.findViewById(R.id.tvCredits)
         tvTimeSpent = view.findViewById(R.id.tvTimeSpent)
 
-        tvFirstName.text = ParseUser.getCurrentUser().get("firstName").toString()
-        tvFirstName.text =  ParseUser.getCurrentUser().get("lastName").toString()
+        val firstName = ParseUser.getCurrentUser().get("firstName").toString()
+        val lastName = ParseUser.getCurrentUser().get("lastName").toString()
+
+        tvName.text = "$firstName $lastName"
         tvUserName.text =  ParseUser.getCurrentUser().get("username").toString()
 
         creditAdapter = CreditsAdapter(requireContext(), allTransactions)
