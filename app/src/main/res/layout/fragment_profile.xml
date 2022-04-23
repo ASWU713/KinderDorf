@@ -9,73 +9,79 @@
 
     <ImageView
         android:id="@+id/ivProfileImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:padding="@dimen/activity_horizontal_margin"
+        android:background="@drawable/illustration"
         android:layout_margin="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvFirstName"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FirstName"
         android:layout_marginTop="55sp"
         android:textSize="25sp"
+        android:gravity="left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LastName"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
-
-    <TextView
         android:id="@+id/UserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UserName"
+        android:text="Name"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-
-        android:id="@+id/tvTransHistory"
-        android:layout_width="144dp"
-        android:layout_height="267dp"
-        android:layout_marginBottom="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <TextView
         android:id="@+id/tvCredits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Credits"
-        android:layout_marginStart="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTimeSpent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="10 Credits"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/UserName" />
 
     <TextView
         android:id="@+id/tvTimeSpent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time Spent"
-        android:layout_marginBottom="150sp"
-        android:layout_marginStart="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="5 Hours Spent"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvCredits" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Date of Request             Credits"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvTransHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeSpent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/tvTransHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

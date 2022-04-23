@@ -10,12 +10,14 @@
         android:id="@+id/ivLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:maxWidth="350dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
+        android:src="@drawable/kd"/>
     <EditText
         android:id="@+id/etFirstName"
         android:layout_width="wrap_content"
@@ -78,6 +80,7 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:textSize="30sp"
+        android:background="@drawable/signin_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
