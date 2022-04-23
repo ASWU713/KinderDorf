@@ -21,7 +21,6 @@ import java.util.*
 
 
 class ProfileFragment : Fragment() {
-
     var allTransactions: MutableList<Transactions> = mutableListOf()
     lateinit var creditAdapter: CreditsAdapter
     lateinit var creditHistory: RecyclerView
