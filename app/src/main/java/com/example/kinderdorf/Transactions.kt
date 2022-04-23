@@ -1,5 +1,6 @@
 package com.example.kinderdorf
 
+import com.parse.Parse
 import com.parse.ParseClassName
 import com.parse.ParseObject
 import com.parse.ParseUser
@@ -48,12 +49,14 @@ class Transactions: ParseObject() {
         put(KEY_USER_SELLER, user)
     }
 
+
     companion object{
         const val KEY_USER_BUYER = "buyerUser"
         const val KEY_USER_SELLER = "sellerUser"
         const val KEY_DATE_BUY = "dateBuy"
         const val KEY_DATE_REQUEST = "dateRequest"
         const val KEY_PRICE = "price"
+
     }
 
 }

@@ -20,7 +20,7 @@ import com.parse.ParseException
 import com.parse.ParseQuery
 
 
-class CalendarFragment : Fragment() {
+class CalendarFragment : Fragment(), PersCalendAdapter.OnItemClickListener {
     lateinit var toggleGroup: MaterialButtonToggleGroup
     lateinit var calendarRecyclerView: RecyclerView
     lateinit var newEventButton: Button
@@ -59,6 +59,7 @@ class CalendarFragment : Fragment() {
         }
         newEventButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
+                clear()
                 val nextFrag = EventDetailsFragment()
                 activity!!.supportFragmentManager.beginTransaction()
                     .replace(R.id.flContainer, nextFrag, "findEventFragment")
@@ -76,7 +77,7 @@ class CalendarFragment : Fragment() {
         //3. Create adapter that will bridge data and row layout
         //4. Set adapter on RecyclerView
 
-        adapter = PersCalendAdapter(requireContext(), allTransactions)
+        adapter = PersCalendAdapter(requireContext(), allTransactions, this)
         calendarRecyclerView.adapter = adapter
         //5. Set layout manager on RecyclerView
         calendarRecyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -121,7 +122,21 @@ class CalendarFragment : Fragment() {
             }
         })
     }
+
+    fun clear(){
+        allTransactions.clear()
+        adapter.notifyDataSetChanged()
+    }
+
     companion object {
         const val TAG="CalendarFragment"
+    }
+
+    override fun onItemClick(position: Int) {
+        //perofmr the things that onClick handles
+        Toast.makeText(requireContext(), "item $position clicked", Toast.LENGTH_SHORT).show()
+        val clickedItem: Transactions = allTransactions[position]
+        Log.i(TAG, "The item to be sent is$clickedItem")
+        adapter.notifyItemChanged(position)
     }
 }

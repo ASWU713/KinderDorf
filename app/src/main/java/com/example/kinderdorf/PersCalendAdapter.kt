@@ -13,12 +13,16 @@ import java.text.SimpleDateFormat
 
 //*** This class is the adapter for the CalendarFragment.kt that will bind transactions to its view
 
-class PersCalendAdapter(val context: Context, val transactions: MutableList<Transactions>)
+class PersCalendAdapter(
+    val context: Context, val transactions: MutableList<Transactions>,
+    private val listener: OnItemClickListener
+)
     : RecyclerView.Adapter<PersCalendAdapter.ViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): PersCalendAdapter.ViewHolder {
         // specify the layout file to use for this item
-        val view = LayoutInflater.from(context).inflate(R.layout.transaction_post, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_group_calendar, parent, false)
         return ViewHolder(view)
     }
 
@@ -26,6 +30,8 @@ class PersCalendAdapter(val context: Context, val transactions: MutableList<Tran
         //this gets the particular transaction requested
         val transaction = transactions.get(position)
         holder.bind(transaction)
+
+
     }
 
     override fun getItemCount(): Int {
@@ -36,7 +42,8 @@ class PersCalendAdapter(val context: Context, val transactions: MutableList<Tran
 
 
 
-    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView),
+    View.OnClickListener{
         // initialize id's of textViews in transaction_post.xml
         val requestDateData: TextView
         val priceData: TextView
@@ -44,11 +51,16 @@ class PersCalendAdapter(val context: Context, val transactions: MutableList<Tran
         val buyerData: TextView
         val simpleDateFormat = SimpleDateFormat("MMM-dd-yyyy")
 
+
         init {
-            requestDateData = itemView.findViewById(R.id.requestDateData)
-            priceData = itemView.findViewById(R.id.priceData)
-            sellerData = itemView.findViewById(R.id.sellerData)
-            buyerData = itemView.findViewById(R.id.buyerData)
+            requestDateData = itemView.findViewById(R.id.tvRequestDate)
+            priceData = itemView.findViewById(R.id.tvPrice)
+            sellerData = itemView.findViewById(R.id.tvUserSeller)
+            buyerData = itemView.findViewById(R.id.tvBuyers)
+
+            itemView.setOnClickListener(this)
+
+
         }
         fun bind(transactions: Transactions){
             requestDateData.text = simpleDateFormat.format(transactions.getDateRequest()).toString()
@@ -57,6 +69,19 @@ class PersCalendAdapter(val context: Context, val transactions: MutableList<Tran
             buyerData.text = transactions.getUserBuyer()?.username
 
         }
+
+        override fun onClick(p0: View?) {
+            val position = adapterPosition
+
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
+
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
     }
 
     companion object {
