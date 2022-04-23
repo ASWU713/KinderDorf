@@ -50,10 +50,9 @@ class ProfileFragment : Fragment() {
         tvCredits = view.findViewById(R.id.tvCredits)
         tvTimeSpent = view.findViewById(R.id.tvTimeSpent)
 
-//        tvFirstName = User.getFirstName()
-//        tvFirstName = User.getLastName()
-//        tvUsertName = User.getUser()
-        queryProfile()
+        tvFirstName.text = ParseUser.getCurrentUser().get("firstName").toString()
+        tvFirstName.text =  ParseUser.getCurrentUser().get("lastName").toString()
+        tvUserName.text =  ParseUser.getCurrentUser().get("username").toString()
 
         creditAdapter = CreditsAdapter(requireContext(), allTransactions)
         creditHistory.adapter = creditAdapter
@@ -77,7 +76,7 @@ class ProfileFragment : Fragment() {
                 } else{
                     if( transactions!= null){
                         for (transaction in transactions){
-                            Log.i(TAG, "Party: " + transaction.getUserSeller()?.username )
+//                            Log.i(TAG, "Party: " + transaction.getUserSeller()?.username )
                         }
                         allTransactions.addAll(transactions)
                         creditAdapter.notifyDataSetChanged()
@@ -87,28 +86,6 @@ class ProfileFragment : Fragment() {
         })
     }
 
-    private fun queryProfile(){
-
-        val query: ParseQuery<User> = ParseQuery.getQuery(User::class.java)
-        query.whereContains("name", "Drew")
-//        query.whereEqualTo(User.KEY_USER, ParseUser.getCurrentUser())
-
-        query.findInBackground(object: FindCallback<User>{
-            override fun done(user: MutableList<User>?, e: ParseException?){
-                if(e!= null){
-                    Log.e(TAG, "Error fetching profile data")
-                }
-                else{
-                    if(user!= null){
-                        Log.i(TAG, "here: "+ user)
-                        for(person in user){
-                            Log.i(TAG, "Profile return data: " + person)
-                        }
-                    }
-                }
-            }
-        })
-    }
     companion object{
         const val TAG = "ProfileFragment"
         const val POST_LIMIT = 20
