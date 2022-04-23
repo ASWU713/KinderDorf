@@ -30,7 +30,6 @@ class ProfileFragment : Fragment() {
     lateinit var tvCredits: TextView
     lateinit var tvTimeSpent: TextView
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
