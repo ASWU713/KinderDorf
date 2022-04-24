@@ -12,7 +12,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:padding="@dimen/activity_horizontal_margin"
-        android:background="@drawable/illustration"
+        android:background="@drawable/ic_baseline_person_24"
         android:layout_margin="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

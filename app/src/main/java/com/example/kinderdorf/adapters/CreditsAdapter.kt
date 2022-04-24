@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kinderdorf.R
 import com.example.kinderdorf.Transactions
 import com.example.kinderdorf.User
-import com.example.kinderdorf.fragments.ProfileFragment.Companion.TAG
+//import com.example.kinderdorf.fragments.ProfileFragment.Companion.TAG
 import java.text.SimpleDateFormat
 
 class CreditsAdapter(val context: Context, val transactions: List<Transactions>)
@@ -58,6 +58,10 @@ class CreditsAdapter(val context: Context, val transactions: List<Transactions>)
         }
 
 
+    }
+
+    companion object {
+        const val TAG = "CreditsAdapter"
     }
 
 }

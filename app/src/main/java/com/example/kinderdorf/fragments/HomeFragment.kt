@@ -17,6 +17,7 @@ import com.google.android.material.button.MaterialButtonToggleGroup
 import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
+import com.parse.ParseUser
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -25,6 +26,7 @@ class HomeFragment : Fragment() {
 
     lateinit var groupCalRV : RecyclerView
     lateinit var adapter: GroupCalendarAdapter
+    lateinit var creditHomeText: TextView
     var allTransactions: ArrayList<Transactions> = ArrayList()
     lateinit var toggleGroup: MaterialButtonToggleGroup
 
@@ -48,18 +50,24 @@ class HomeFragment : Fragment() {
             if (isChecked) {
                 when(checkedId) {
                     R.id.scheduledButton -> {
-                        Toast.makeText(requireContext(), "Scheduled Button Clicked", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(requireContext(), "Scheduled Button Clicked", Toast.LENGTH_SHORT).show()
                         queryScheduledTransactions()
                     }
                     R.id.openButton -> {
-                        Toast.makeText(requireContext(), "Open Button Clicked", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(requireContext(), "Open Button Clicked", Toast.LENGTH_SHORT).show()
                         queryOpenTransactions()
                     }
                 }
             }
         }
 
-
+        creditHomeText = view.findViewById(R.id.tvCreditBalance)
+        var currentBalance: String = ParseUser.getCurrentUser().get("accountBalance").toString()
+        if (currentBalance == "null") {
+            creditHomeText.text = "\$KD: 0"
+        } else {
+            creditHomeText.text = "\$KD: " + currentBalance
+        }
         queryScheduledTransactions()
 
     }
