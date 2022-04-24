@@ -22,10 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:checkedButton="@+id/scheduledButton"
-        app:selectionRequired="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreditBalance"
+        app:selectionRequired="true"
         app:singleSelection="true">
 
         <Button
@@ -33,8 +33,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:text="Scheduled"
-             />
+            android:text="Scheduled" />
 
 
         <Button
@@ -42,19 +41,19 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:text="Open"
-     />
+            android:text="Open" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGroupCalendar"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/rv_container_border"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeToggleButtonGroup" />
