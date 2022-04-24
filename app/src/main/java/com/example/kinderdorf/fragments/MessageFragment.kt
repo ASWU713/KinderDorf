@@ -14,7 +14,6 @@ import com.example.kinderdorf.Message
 import com.example.kinderdorf.R
 import com.example.kinderdorf.User
 import com.example.kinderdorf.adapters.ChatAdapter
-import com.example.kinderdorf.adapters.MessageAdapter
 import com.parse.*
 import java.util.*
 import kotlin.collections.ArrayList
