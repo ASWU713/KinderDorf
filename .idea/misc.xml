@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_event_details.xml" value="0.2625" />
+        <entry key="app/src/main/res/layout/item_group_calendar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/transaction_post.xml" value="0.25" />
       </map>
     </option>
