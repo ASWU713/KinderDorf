@@ -23,18 +23,17 @@ A babysitting app to establish a village in our digital world. Our goal is to cr
 ​
 **Required Must-have Stories**
 ​
-* Users should be able to create an account and log in
-* Users need to be able to join or establish a group with friends
-* User should be able to schedule an event or availability 
-* Users should be able to see profile
-* Users should be able to see group
+* [x] Users should be able to create an account and log in* 
+* [x] User should be able to schedule an event or availability 
+* [x] Users should be able to see profile
 ​
 
 **Optional Nice-to-have Stories**
 ​
-* Rate babysitters and kids
-* Vote in new group members
-* Playdate scheduler - no one expenses credits or gains
+* [] Rate babysitters and kids
+* [] Users need to be able to join or establish a group with friends
+* [] Vote in new group members
+* [] Playdate scheduler - no one expenses credits or gains
 ​
 ### 2. Screen Archetypes
 * Login/Register - User signs up or logs into their account
