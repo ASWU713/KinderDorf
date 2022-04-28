@@ -11,7 +11,7 @@ KinderDorf - README
 A babysitting app to establish a village in our digital world. Our goal is to create a group or community that will work together to help raise each other's children like we have done since the beginning of time. Overall users can create a shared group and each person gets a set number of babysitting credits. Using a shared event calendar the group collaborates to fill babysitting needs or requests through exchange of credits.
 ​
 ## Video App Overview
-###Link:[![KinderDorf Video Walkthrough Youtube Link](https://i9.ytimg.com/vi/1iqDteYLq3E/mq1.jpg?sqp=CMzErJMG&rs=AOn4CLDUixuGfO-YXtRH13jyzpg9xcUO5g)](https://youtu.be/1iqDteYLq3E) 
+### Link:[![KinderDorf Video Walkthrough Youtube Link](https://i9.ytimg.com/vi/1iqDteYLq3E/mq1.jpg?sqp=CMzErJMG&rs=AOn4CLDUixuGfO-YXtRH13jyzpg9xcUO5g)](https://youtu.be/1iqDteYLq3E) 
 ​
 ### App Evaluation
 - **Category:** Social Networking / Communication
