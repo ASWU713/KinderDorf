@@ -24,8 +24,10 @@ A babysitting app to establish a village in our digital world. Our goal is to cr
 **Required Must-have Stories**
 ​
 * [x] Users should be able to create an account and log in* 
-* [x] User should be able to schedule an event or availability 
+* [x] Users should be able to see the group's scheduled and open requests
+* [x] User should be able to see their personal requests 
 * [x] Users should be able to see profile
+* [x] Users should be able to chat with other members
 ​
 
 **Optional Nice-to-have Stories**
