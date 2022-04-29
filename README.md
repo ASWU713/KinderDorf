@@ -10,7 +10,11 @@ KinderDorf - README
 ### Description
 A babysitting app to establish a village in our digital world. Our goal is to create a group or community that will work together to help raise each other's children like we have done since the beginning of time. Overall users can create a shared group and each person gets a set number of babysitting credits. Using a shared event calendar the group collaborates to fill babysitting needs or requests through exchange of credits.
 ​
-## Video App Overview
+
+### Latest Update: 
+  - Gif: <img src="https://media.giphy.com/media/p8Bh4DzsOC28je7r2Y/giphy.gif" width="350">
+
+## Walkthrough Video
 ### Link:[![KinderDorf Video Walkthrough Youtube Link](https://i9.ytimg.com/vi/1iqDteYLq3E/mq1.jpg?sqp=CMzErJMG&rs=AOn4CLDUixuGfO-YXtRH13jyzpg9xcUO5g)](https://youtu.be/1iqDteYLq3E) 
 ​
 ### App Evaluation
@@ -322,7 +326,5 @@ Optional:
      ```
          
 - Updates: 
-  - Home Screen: <img width="256" alt="image" src="https://user-images.githubusercontent.com/33812146/163652810-2b0cd603-46ec-43d7-8beb-9fc9e73a7713.png">
-  - Message Screen: <img width="256" alt="image" src="https://user-images.githubusercontent.com/33812146/163652837-70e3484b-1098-4127-8b85-5aa28e509a69.png">
-  - Gif: <img src="https://media.giphy.com/media/xuQb7FaunUofCINmIE/giphy.gif" width="350">
+  - Gif: <img src="https://media.giphy.com/media/p8Bh4DzsOC28je7r2Y/giphy.gif" width="350">
 
