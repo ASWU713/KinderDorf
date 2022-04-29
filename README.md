@@ -15,7 +15,7 @@ A babysitting app to establish a village in our digital world. Our goal is to cr
   - Gif: <img src="https://media.giphy.com/media/p8Bh4DzsOC28je7r2Y/giphy.gif" width="350">
 
 ## Walkthrough Video
-### Link:[![KinderDorf Video Walkthrough Youtube Link](https://i9.ytimg.com/vi/1iqDteYLq3E/mq1.jpg?sqp=CMzErJMG&rs=AOn4CLDUixuGfO-YXtRH13jyzpg9xcUO5g)](https://youtu.be/1iqDteYLq3E) 
+### Link:[![KinderDorf Video Walkthrough Youtube Link]](https://youtu.be/1iqDteYLq3E) 
 ​
 ### App Evaluation
 - **Category:** Social Networking / Communication
