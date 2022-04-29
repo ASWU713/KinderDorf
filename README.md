@@ -10,6 +10,9 @@ KinderDorf - README
 ### Description
 A babysitting app to establish a village in our digital world. Our goal is to create a group or community that will work together to help raise each other's children like we have done since the beginning of time. Overall users can create a shared group and each person gets a set number of babysitting credits. Using a shared event calendar the group collaborates to fill babysitting needs or requests through exchange of credits.
 ​
+## Video App Overview
+### Link:[![KinderDorf Video Walkthrough Youtube Link](https://i9.ytimg.com/vi/1iqDteYLq3E/mq1.jpg?sqp=CMzErJMG&rs=AOn4CLDUixuGfO-YXtRH13jyzpg9xcUO5g)](https://youtu.be/1iqDteYLq3E) 
+​
 ### App Evaluation
 - **Category:** Social Networking / Communication
 - **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
@@ -23,18 +26,19 @@ A babysitting app to establish a village in our digital world. Our goal is to cr
 ​
 **Required Must-have Stories**
 ​
-* Users should be able to create an account and log in
-* Users need to be able to join or establish a group with friends
-* User should be able to schedule an event or availability 
-* Users should be able to see profile
-* Users should be able to see group
+* [x] Users should be able to create an account and log in* 
+* [x] Users should be able to see the group's scheduled and open requests
+* [x] User should be able to see their personal requests 
+* [x] Users should be able to see profile
+* [x] Users should be able to chat with other members
 ​
 
 **Optional Nice-to-have Stories**
 ​
-* Rate babysitters and kids
-* Vote in new group members
-* Playdate scheduler - no one expenses credits or gains
+* [] Rate babysitters and kids
+* [] Users need to be able to join or establish a group with friends
+* [] Vote in new group members
+* [] Playdate scheduler - no one expenses credits or gains
 ​
 ### 2. Screen Archetypes
 * Login/Register - User signs up or logs into their account
