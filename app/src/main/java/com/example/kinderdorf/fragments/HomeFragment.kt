@@ -115,9 +115,9 @@ class HomeFragment : Fragment() {
         query.limit = 50
         query.include("sellerUser")
         query.include("buyerUser")
-        query.orderByAscending("dateRequest")
-        query.whereExists("sellerUser")
-        query.whereDoesNotExist("buyerUser")
+        query.orderByDescending("dateRequest")
+        query.whereDoesNotExist("sellerUser")
+        query.whereExists("buyerUser")
 //        query.whereGreaterThanOrEqualTo("dateRequest", Date())
         query.findInBackground(object : FindCallback<Transactions> {
             override fun done(transactions: MutableList<Transactions>?, e: ParseException?) {

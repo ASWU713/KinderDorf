@@ -56,8 +56,14 @@ class GroupCalendarAdapter(val context: Context, val transactions: ArrayList<Tra
             val simpleDateFormat = SimpleDateFormat("MMM dd")
             val simpleTimeFormat = SimpleDateFormat("h:mma")
 
-            tvUserSeller.text = "By: " + transaction.getUserSeller()?.get("firstName").toString() + " " + transaction.getUserSeller()?.get("lastName").toString().get(0)
-            tvRequestDate.text = simpleDateFormat.format(transaction.getDateRequest()).toString()
+            if (transaction.getUserSeller()?.get("firstName").toString() != "null") {
+                tvUserSeller.text = "By: " + transaction.getUserSeller()?.get("firstName")
+                    .toString() + " " + transaction.getUserSeller()?.get("lastName").toString()
+                    .get(0)
+            } else {
+                tvUserSeller.text = "Not Scheduled"
+            }
+                tvRequestDate.text = simpleDateFormat.format(transaction.getDateRequest()).toString()
             tvRequestTime.text = "@" + simpleTimeFormat.format(transaction.getDateRequest()).toString()
             tvPrice.text = "\$KD:" + transaction.getPrice()?.toInt().toString()
             tvBuyer.text = "Accepted: " + transaction.getUserBuyer()?.get("firstName").toString() + " " + transaction.getUserBuyer()?.get("lastName").toString().get(0)
